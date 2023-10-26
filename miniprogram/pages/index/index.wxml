@@ -1,0 +1,35 @@
+<view class="container">
+    <view class="content" style="padding-bottom: calc(128rpx + {{saftBottomHeight}}px);">
+        <t-notice-bar visible="{{true}}" theme="warning" content="小程序价格仅供参考，以实际下单为准"></t-notice-bar>
+        <t-notice-bar style="margin-top:16rpx;" visible="{{true}}" prefixIcon="null" marquee="{{marquee1}}" content="连江县城区 168 元包邮送货上门; 福建省内 258 元包邮; 联系电话：13860638315 张女士、18559105115 庄先生"></t-notice-bar>
+        <t-notice-bar style="margin-top:16rpx;" visible="{{true}}" prefixIcon="{{false}}" content="价格更新时间：2023/10/24">
+            <view slot="prefix-icon">
+                <t-icon name="error-circle-filled"></t-icon>
+            </view>
+        </t-notice-bar>
+        <t-cell wx:for="{{products}}" wx:key="name" title="{{item.name}}" hover>
+            <view slot="note">
+                <view wx:if="{{item.defaultText}}">
+                    {{item.defaultText}}
+                </view>
+                <view class="cell-solt" wx:else="">
+                    <text class="text">{{item.priceShow}} 元 / {{item.unit}}</text>
+                    <view class="stepper">
+                        <t-stepper value="{{item.count}}" theme="filled" size="large" data-index="{{index}}" bind:change="handleCountChange" />
+                    </view>
+                </view>
+            </view>
+        </t-cell>
+    </view>
+    <view class="bottom" style="height: calc(128rpx + {{saftBottomHeight}}px);padding-bottom: {{saftBottomHeight}}px;">
+        <view class="left">
+            <text class="price">￥{{total}}</text>
+        </view>
+        <view class="right">
+            <t-button theme="primary" size="large" variant="text" bind:tap="reset">清空</t-button>
+            <t-button theme="primary" size="large" bind:tap="copySelectedInformation">复制商品信息</t-button>
+        </view>
+    </view>
+</view>
+
+<t-toast id="t-toast" />

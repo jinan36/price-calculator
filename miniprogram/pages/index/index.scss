@@ -1,0 +1,33 @@
+.cell-solt {
+    display: flex;
+
+    .stepper {
+        margin-left: 16rpx;
+    }
+}
+
+.content {
+}
+
+.bottom {
+    
+    background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    border-top: 1rpx solid #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16rpx;
+
+    .left {
+        .price {
+            color: #d54941;
+            font-size: 48rpx;
+            font-weight: bold;
+        }
+    }
+}
