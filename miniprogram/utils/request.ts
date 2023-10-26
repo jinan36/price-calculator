@@ -1,4 +1,8 @@
-export function staticFileRequest(options: WechatMiniprogram.RequestOption<string | Record<string, any> | ArrayBuffer>) {
+type IAnyObject = Record<string, any>
+export function staticFileRequest<T extends string | IAnyObject | ArrayBuffer =
+    | string
+    | IAnyObject
+    | ArrayBuffer>(options: WechatMiniprogram.RequestOption<T>) {
     const data = wx.getStorageSync(options.url) || {}
     wx.request({
         ...options,
@@ -15,6 +19,7 @@ export function staticFileRequest(options: WechatMiniprogram.RequestOption<strin
                 ETag: res.header.ETag,
                 data: res
             })
+            // @ts-ignore
             options.success && options.success(res)
         }
     })

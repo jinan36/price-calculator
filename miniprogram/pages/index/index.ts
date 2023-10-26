@@ -2,20 +2,25 @@ import NP from 'number-precision'
 import Toast, { hideToast } from 'tdesign-miniprogram/toast/index';
 import { staticFileRequest } from '../../utils/request';
 
-const app = getApp<IAppOption>()
+interface IProduct {
+    name: string;
+    price: number;
+    priceShow?: number;
+    count: number;
+    unit: string;
+}
+interface IPriceJsonFile {
+    updateTime: string;
+    products: IProduct[];
+}
+
+// const app = getApp<IAppOption>()
 
 
 Page({
     data: {
         updateTime: '1900/1/1',
-        products: [
-            {
-                name: "青鳗鱼丸",
-                price: 3500,
-                count: 0,
-                unit: "斤"
-            }
-        ],
+        products: [] as IProduct[],
         total: 0,
 
 
@@ -40,7 +45,7 @@ Page({
             duration: 0
         });
 
-        staticFileRequest({
+        staticFileRequest<IPriceJsonFile>({
             url: 'http://175.178.224.140:3000/miniapp-yuwan.json',
             header: {
                 'content-type': 'application/json'
@@ -113,6 +118,7 @@ Page({
                 context: this,
                 selector: '#t-toast',
                 message: '还没有选择商品哦',
+                // @ts-ignore
                 theme: 'warning',
                 direction: 'column',
             });
