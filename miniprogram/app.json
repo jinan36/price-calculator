@@ -12,5 +12,6 @@
     "usingComponents": {
         "t-icon": "tdesign-miniprogram/icon/icon",
         "t-toast": "tdesign-miniprogram/toast/toast"
-    }
+    },
+    "lazyCodeLoading": "requiredComponents"
 }

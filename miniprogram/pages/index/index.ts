@@ -1,236 +1,20 @@
 import NP from 'number-precision'
-import Toast from 'tdesign-miniprogram/toast/index';
+import Toast, { hideToast } from 'tdesign-miniprogram/toast/index';
+import { staticFileRequest } from '../../utils/request';
 
 const app = getApp<IAppOption>()
 
 
 Page({
     data: {
+        updateTime: '1900/1/1',
         products: [
             {
                 name: "青鳗鱼丸",
                 price: 3500,
                 count: 0,
                 unit: "斤"
-            },
-            {
-                name: "马鲛鱼丸",
-                price: 3000,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "虾丸",
-                price: 6500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "墨鱼丸",
-                price: 7500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "正鮸鱼丸",
-                price: 6500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "石斑鱼丸",
-                price: 8500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "招牌酒糟鳗鱼",
-                price: 2500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "精品酒糟鳗鱼",
-                price: 3500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "招牌肉燕",
-                price: 4000,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "招牌芋泥",
-                price: 2600,
-                count: 0,
-                unit: "份"
-            },
-            {
-                name: "菠萝饭",
-                price: 2500,
-                count: 0,
-                unit: "份"
-            },
-            {
-                name: "鲨鱼滑",
-                price: 3800,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "鳗鱼滑",
-                price: 3800,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "正鮸鱼滑",
-                price: 4500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "肉片",
-                price: 2300,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "鱼燕",
-                price: 2600,
-                count: 0,
-                unit: "400g"
-            },
-            {
-                name: "鱼饺",
-                price: 2600,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "白春只鱼面",
-                price: 3800,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "连江鸡卷",
-                price: 3500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "头水紫菜",
-                price: 5500,
-                count: 0,
-                unit: "250g"
-            },
-            {
-                name: "鱼皮猪肉烧麦",
-                price: 3000,
-                count: 0,
-                unit: "400g"
-            },
-            {
-                name: "黄瓜鱼片干",
-                price: 7500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "黄瓜鱼干",
-                price: 2600,
-                count: 0,
-                unit: "只（约 250g)"
-            },
-            {
-                name: "剥皮鱼干",
-                price: 8500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "丝鳗鱼干",
-                price: 8500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "肉昌鱼干",
-                price: 4500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "白春鱼干",
-                price: 4200,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "鮸鱼干",
-                price: 8500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "白昌鱼干",
-                price: 6000,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "小虾米",
-                price: 3500,
-                count: 0,
-                unit: "罐（约 250g）"
-            },
-            {
-                name: "大虾米",
-                price: 6500,
-                count: 0,
-                unit: "罐（约 250g）"
-            },
-            {
-                name: "丁香鱼干",
-                price: 3500,
-                count: 0,
-                unit: "罐（约 250g）"
-            },
-            {
-                name: "盐带鱼",
-                price: 3000,
-                count: 0,
-                unit: "400g",
-                defaultText: "时价"
-            },
-            {
-                name: "鱿鱼干",
-                price: 17500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "目鱼干",
-                price: 12500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "小蛏干",
-                price: 23000,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "大蛏干",
-                price: 3000,
-                count: 0,
-                unit: "400g",
-                defaultText: "缺货"
-            },
+            }
         ],
         total: 0,
 
@@ -247,12 +31,37 @@ Page({
         const systemInfo = wx.getSystemInfoSync()
         this.setData({ saftBottomHeight: systemInfo.screenHeight - systemInfo.safeArea.height - systemInfo.statusBarHeight })
 
-        const products = this.data.products
-        const data: { [key: string]: number } = {}
-        products.forEach((product, index) => {
-            data[`products[${index}].priceShow`] = NP.divide(product.price, 100)
+        Toast({
+            context: this,
+            selector: '#t-toast',
+            message: '加载中...',
+            theme: 'loading',
+            direction: 'column',
+            duration: 0
+        });
+
+        staticFileRequest({
+            url: 'http://175.178.224.140:3000/miniapp-yuwan.json',
+            header: {
+                'content-type': 'application/json'
+            },
+            success: response => {
+                const { updateTime, products } = response.data
+                this.setData({
+                    updateTime, products
+                })
+                const data: { [key: string]: number } = {}
+                this.data.products.forEach((product, index) => {
+                    data[`products[${index}].priceShow`] = NP.divide(product.price, 100)
+                })
+                this.setData(data)
+
+                hideToast()
+            },
+            fail: () => {
+                hideToast()
+            }
         })
-        this.setData(data)
     },
     onShareAppMessage() {
         return {
