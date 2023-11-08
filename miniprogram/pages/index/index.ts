@@ -46,7 +46,7 @@ Page({
         });
 
         staticFileRequest<IPriceJsonFile>({
-            url: 'http://175.178.224.140:3000/miniapp-yuwan.json',
+            url: 'https://175.178.224.140/static-files/miniapp-yuwan.json',
             header: {
                 'content-type': 'application/json'
             },
