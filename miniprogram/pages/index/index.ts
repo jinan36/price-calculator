@@ -14,8 +14,32 @@ Page({
                 unit: "斤"
             },
             {
-                name: "马鲛鱼丸",
+                name: "青鳗鱼丸（无馅）",
+                price: 3800,
+                count: 0,
+                unit: "斤"
+            },
+            {
+                name: "鲨鱼丸（无馅）",
+                price: 3800,
+                count: 0,
+                unit: "斤"
+            },
+            {
+                name: "扁马鲛鱼丸",
                 price: 3000,
+                count: 0,
+                unit: "斤"
+            },
+            {
+                name: "扁马鲛鱼丸（无馅）",
+                price: 3200,
+                count: 0,
+                unit: "斤"
+            },
+            {
+                name: "扁马鲛鱼滑",
+                price: 3200,
                 count: 0,
                 unit: "斤"
             },
@@ -38,6 +62,12 @@ Page({
                 unit: "斤"
             },
             {
+                name: "正鮸鱼丸（无馅）",
+                price: 6800,
+                count: 0,
+                unit: "斤"
+            },
+            {
                 name: "石斑鱼丸",
                 price: 8500,
                 count: 0,
@@ -56,7 +86,13 @@ Page({
                 unit: "斤"
             },
             {
-                name: "招牌肉燕",
+                name: "招牌黄岐小肉燕",
+                price: 4000,
+                count: 0,
+                unit: "斤"
+            },
+            {
+                name: "马蹄肉燕",
                 price: 4000,
                 count: 0,
                 unit: "斤"
@@ -88,12 +124,6 @@ Page({
             {
                 name: "正鮸鱼滑",
                 price: 4500,
-                count: 0,
-                unit: "斤"
-            },
-            {
-                name: "肉片",
-                price: 2300,
                 count: 0,
                 unit: "斤"
             },
