@@ -20,6 +20,12 @@ Page({
                 unit: "斤"
             },
             {
+                name: "鲨鱼丸",
+                price: 3500,
+                count: 0,
+                unit: "斤"
+            },
+            {
                 name: "鲨鱼丸（无馅）",
                 price: 3800,
                 count: 0,
@@ -74,14 +80,26 @@ Page({
                 unit: "斤"
             },
             {
-                name: "招牌酒糟鳗鱼",
+                name: "招牌酒糟鳗鱼（生）",
                 price: 2500,
                 count: 0,
                 unit: "斤"
             },
             {
-                name: "精品酒糟鳗鱼",
+                name: "招牌酒糟鳗鱼（熟半成品）",
+                price: 2800,
+                count: 0,
+                unit: "斤"
+            },
+            {
+                name: "精品酒糟鳗鱼（生）",
                 price: 3500,
+                count: 0,
+                unit: "斤"
+            },
+            {
+                name: "精品酒糟鳗鱼（熟半成品）",
+                price: 3800,
                 count: 0,
                 unit: "斤"
             },
@@ -146,7 +164,13 @@ Page({
                 unit: "斤"
             },
             {
-                name: "连江鸡卷",
+                name: "连江鸡卷（生）",
+                price: 3300,
+                count: 0,
+                unit: "斤"
+            },
+            {
+                name: "连江鸡卷（熟半成品）",
                 price: 3500,
                 count: 0,
                 unit: "斤"
@@ -212,24 +236,6 @@ Page({
                 unit: "斤"
             },
             {
-                name: "小虾米",
-                price: 3500,
-                count: 0,
-                unit: "罐（约 250g）"
-            },
-            {
-                name: "大虾米",
-                price: 6500,
-                count: 0,
-                unit: "罐（约 250g）"
-            },
-            {
-                name: "丁香鱼干",
-                price: 3500,
-                count: 0,
-                unit: "罐（约 250g）"
-            },
-            {
                 name: "盐带鱼",
                 price: 3000,
                 count: 0,
@@ -249,17 +255,49 @@ Page({
                 unit: "斤"
             },
             {
-                name: "小蛏干",
-                price: 23000,
+                name: "虾米（小号）",
+                price: 3500,
                 count: 0,
-                unit: "斤"
+                unit: "罐（约 250g）"
             },
             {
-                name: "大蛏干",
-                price: 3000,
+                name: "虾米（中号）",
+                price: 4500,
                 count: 0,
-                unit: "400g",
+                unit: "罐（约 250g）"
+            },
+            {
+                name: "虾米（大号）",
+                price: 6500,
+                count: 0,
+                unit: "罐（约 250g）",
                 defaultText: "缺货"
+            },
+
+            {
+                name: "蛏干（小号）",
+                price: 11500,
+                count: 0,
+                unit: "罐（约 250g）",
+            },
+            {
+                name: "蛏干（中号）",
+                price: 15500,
+                count: 0,
+                unit: "罐（约 250g）",
+            },
+            {
+                name: "蛏干（大号）",
+                price: 43000,
+                count: 0,
+                unit: "斤",
+                defaultText: "缺货"
+            },
+            {
+                name: "丁香鱼干",
+                price: 3500,
+                count: 0,
+                unit: "罐（约 250g）"
             },
         ],
         total: 0,
