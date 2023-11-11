@@ -197,7 +197,7 @@ Page({
                 name: "黄瓜鱼干",
                 price: 2600,
                 count: 0,
-                unit: "只（约 250g)"
+                unit: "只\n（约 250g)"
             },
             {
                 name: "剥皮鱼干",
@@ -258,19 +258,19 @@ Page({
                 name: "虾米（小号）",
                 price: 3500,
                 count: 0,
-                unit: "罐（约 250g）"
+                unit: "罐\n（约 250g）"
             },
             {
                 name: "虾米（中号）",
                 price: 4500,
                 count: 0,
-                unit: "罐（约 250g）"
+                unit: "罐\n（约 250g）"
             },
             {
                 name: "虾米（大号）",
                 price: 6500,
                 count: 0,
-                unit: "罐（约 250g）",
+                unit: "罐\n（约 250g）",
                 defaultText: "缺货"
             },
 
@@ -278,13 +278,13 @@ Page({
                 name: "蛏干（小号）",
                 price: 11500,
                 count: 0,
-                unit: "罐（约 250g）",
+                unit: "罐\n（约 250g）",
             },
             {
                 name: "蛏干（中号）",
                 price: 15500,
                 count: 0,
-                unit: "罐（约 250g）",
+                unit: "罐\n（约 250g）",
             },
             {
                 name: "蛏干（大号）",
@@ -297,7 +297,7 @@ Page({
                 name: "丁香鱼干",
                 price: 3500,
                 count: 0,
-                unit: "罐（约 250g）"
+                unit: "罐\n（约 250g）"
             },
         ],
         total: 0,
