@@ -1,9 +1,14 @@
 .cell-solt {
     display: flex;
     align-items: center;
+    margin-left: 16rpx;
+
+    .text {
+        white-space: nowrap;
+    }
 
     .stepper {
-        margin-left: 16rpx;
+        margin-left: 32rpx;
     }
 }
 
