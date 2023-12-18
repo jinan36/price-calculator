@@ -46,7 +46,7 @@ Page({
         });
 
         staticFileRequest<IPriceJsonFile>({
-            url: 'https://175.178.224.140/static-files/miniapp-yuwan.json',
+            url: 'https://zhuangjiayuyuan.shop/static-files/miniapp-yuwan.json',
             header: {
                 'content-type': 'application/json'
             },
