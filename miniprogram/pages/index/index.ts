@@ -1,6 +1,7 @@
 import NP from 'number-precision'
 import Toast, { hideToast } from 'tdesign-miniprogram/toast/index';
 import { staticFileRequest } from '../../utils/request';
+import { yuwanData } from "../../libs/data"
 
 interface IProduct {
     name: string;
@@ -44,29 +45,30 @@ Page({
             direction: 'column',
             duration: 0
         });
+        this.setData(yuwanData)
+        hideToast()
+        // staticFileRequest<IPriceJsonFile>({
+        //     url: 'https://123-1321901613.cos.ap-guangzhou.myqcloud.com',
+        //     header: {
+        //         'content-type': 'application/json'
+        //     },
+        //     success: response => {
+        //         const { updateTime, products } = response.data
+        //         this.setData({
+        //             updateTime, products
+        //         })
+        //         const data: { [key: string]: number } = {}
+        //         this.data.products.forEach((product, index) => {
+        //             data[`products[${index}].priceShow`] = NP.divide(product.price, 100)
+        //         })
+        //         this.setData(data)
 
-        staticFileRequest<IPriceJsonFile>({
-            url: 'https://zhuangjiayuyuan.shop/static-files/miniapp-yuwan.json',
-            header: {
-                'content-type': 'application/json'
-            },
-            success: response => {
-                const { updateTime, products } = response.data
-                this.setData({
-                    updateTime, products
-                })
-                const data: { [key: string]: number } = {}
-                this.data.products.forEach((product, index) => {
-                    data[`products[${index}].priceShow`] = NP.divide(product.price, 100)
-                })
-                this.setData(data)
-
-                hideToast()
-            },
-            fail: () => {
-                hideToast()
-            }
-        })
+        //         hideToast()
+        //     },
+        //     fail: () => {
+        //         hideToast()
+        //     }
+        // })
     },
     onShareAppMessage() {
         return {
