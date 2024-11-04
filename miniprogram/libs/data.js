@@ -101,6 +101,13 @@ export const yuwanData = {
         "unit": "250g"
       },
       {
+        "id": "0056",
+        "name": "马蹄小肉燕",
+        "price": 4000,
+        "count": 0,
+        "unit": "500g"
+      },
+      {
         "id": "0015",
         "name": "马蹄肉燕",
         "price": 3500,
@@ -244,10 +251,10 @@ export const yuwanData = {
       },
       {
         "id": "0035",
-        "name": "头水紫菜",
-        "price": 5500,
+        "name": "本地紫菜",
+        "price": 12500,
         "count": 0,
-        "unit": "250g"
+        "unit": "500g"
       },
       {
         "id": "0036",
