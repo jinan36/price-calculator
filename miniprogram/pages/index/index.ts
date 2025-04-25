@@ -45,38 +45,38 @@ Page({
       direction: 'column',
       duration: 0
     });
-    const { updateTime, products } = yuwanData
-    this.setData({
-      updateTime, products
-    })
-    const data: { [key: string]: number } = {}
-    this.data.products.forEach((product, index) => {
-      data[`products[${index}].priceShow`] = NP.divide(product.price, 100)
-    })
-    this.setData(data)
-    hideToast()
-    // staticFileRequest<IPriceJsonFile>({
-    //     url: 'https://123-1321901613.cos.ap-guangzhou.myqcloud.com',
-    //     header: {
-    //         'content-type': 'application/json'
-    //     },
-    //     success: response => {
-    //         const { updateTime, products } = response.data
-    //         this.setData({
-    //             updateTime, products
-    //         })
-    //         const data: { [key: string]: number } = {}
-    //         this.data.products.forEach((product, index) => {
-    //             data[`products[${index}].priceShow`] = NP.divide(product.price, 100)
-    //         })
-    //         this.setData(data)
-
-    //         hideToast()
-    //     },
-    //     fail: () => {
-    //         hideToast()
-    //     }
+    // const { updateTime, products } = yuwanData
+    // this.setData({
+    //   updateTime, products
     // })
+    // const data: { [key: string]: number } = {}
+    // this.data.products.forEach((product, index) => {
+    //   data[`products[${index}].priceShow`] = NP.divide(product.price, 100)
+    // })
+    // this.setData(data)
+    // hideToast()
+    staticFileRequest<IPriceJsonFile>({
+        url: 'https://zjyy-1258177871.cos.ap-guangzhou.myqcloud.com/data.json',
+        header: {
+            'content-type': 'application/json'
+        },
+        success: response => {
+            const { updateTime, products } = response.data
+            this.setData({
+                updateTime, products
+            })
+            const data: { [key: string]: number } = {}
+            this.data.products.forEach((product, index) => {
+                data[`products[${index}].priceShow`] = NP.divide(product.price, 100)
+            })
+            this.setData(data)
+
+            hideToast()
+        },
+        fail: () => {
+            hideToast()
+        }
+    })
   },
   onShareAppMessage() {
     return {

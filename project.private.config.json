@@ -3,7 +3,7 @@
     "projectname": "ts-sass-demo",
     "setting": {
         "compileHotReLoad": false,
-        "urlCheck": true
+        "urlCheck": false
     },
     "libVersion": "3.1.4"
 }
