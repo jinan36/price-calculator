@@ -143,22 +143,6 @@ export const yuwanData = {
         "unit": "400g"
       },
       {
-        "id": "0020",
-        "name": "招牌酒糟鳗鱼【生】",
-        "price": 2500,
-        "count": 0,
-        "unit": "500g",
-        "defaultText": "缺货"
-      },
-      {
-        "id": "0021",
-        "name": "招牌酒糟鳗鱼【炸】",
-        "price": 2800,
-        "count": 0,
-        "unit": "500g",
-        "defaultText": "缺货"
-      },
-      {
         "id": "0022",
         "name": "精品酒糟鳗鱼【生】",
         "price": 3500,
@@ -246,13 +230,6 @@ export const yuwanData = {
         "id": "0034",
         "name": "白春只鱼面",
         "price": 3800,
-        "count": 0,
-        "unit": "500g"
-      },
-      {
-        "id": "0035",
-        "name": "本地紫菜",
-        "price": 12500,
         "count": 0,
         "unit": "500g"
       },
@@ -399,6 +376,27 @@ export const yuwanData = {
         "price": 3800,
         "count": 0,
         "unit": "罐（250g）"
+      },
+      {
+        "id": "0056",
+        "name": "即食海参",
+        "price": 15800,
+        "count": 0,
+        "unit": "8-10粒（500g）"
+      },
+      {
+        "id": "0057",
+        "name": "即食海参",
+        "price": 12800,
+        "count": 0,
+        "unit": "13粒左右（500g）"
+      },
+      {
+        "id": "0058",
+        "name": "淡盐干海参",
+        "price": 31500,
+        "count": 0,
+        "unit": "500g"
       }
     ]
   }

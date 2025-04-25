@@ -4,7 +4,8 @@
     margin-left: 16rpx;
 
     .text {
-        white-space: nowrap;
+        // white-space: nowrap;
+        word-break: break-all;
     }
 
     .stepper {
